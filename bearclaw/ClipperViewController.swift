@@ -12,6 +12,7 @@ class ClipperViewController: NSViewController {
 
     @IBOutlet var textView: NSTextView!
     @IBOutlet var settingsMenu: NSMenu!
+    let screenshotTool = ScreenshotTool()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,12 +20,17 @@ class ClipperViewController: NSViewController {
         // Style the textView
         textView.font = NSFont(name: "Avenir Next", size: 15)
         textView.textContainerInset = NSMakeSize(10, 10)
+        
+        // Focus directly on the textview
+        textView.window?.makeFirstResponder(textView)
     }
     
     @IBAction func clickedOnFullScreenshotButton(_ sender: NSButton) {
+        AppDelegate.popoverInstance.close()
+        
         NewBearNote()
-            .setContents("Screenshot taken on XXX")
-            .setFile(fileName: "screenshot.jpg", fileContents: self.TakeScreensShots())
+            .setContents(generateNameForScreenshot())
+            .setFile(fileName: "screenshot.png", fileContents: screenshotTool.captureFullscreen())
             .sendToBear()
     }
     
@@ -32,22 +38,33 @@ class ClipperViewController: NSViewController {
         settingsMenu.popUp(positioning: settingsMenu.item(at: 0), at: NSEvent.mouseLocation, in: nil)
     }
     
+    @IBAction func clickedOnPartialScreenshotButton(_ sender: NSButton) {
+        AppDelegate.popoverInstance.close()
+
+        NewBearNote()
+            .setContents(generateNameForScreenshot())
+            .setFile(fileName: "screenshot.png", fileContents: screenshotTool.captureUserSelection())
+            .sendToBear()
+    }
+    
+    func generateNameForScreenshot() -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd_HH.MM.ss"
+        
+        return "Screenshot_" + dateFormatter.string(from: Date()) + ".png"
+    }
+    
+    
     @IBAction func clickedOnSaveToBear(_ sender: NSButton) {
+        AppDelegate.popoverInstance.close()
+
+
         NewBearNote()
             .setContents(self.textView.string)
             .sendToBear()
         
         // Reset the textView
         self.textView.textStorage?.mutableString.setString("")
-    }
-    
-    func TakeScreensShots() -> String{
-        let displayID = CGMainDisplayID()
-        let imageRef = CGDisplayCreateImage(displayID)!
-        let bitmapRep = NSBitmapImageRep(cgImage: imageRef)
-        let jpegData = bitmapRep.representation(using: NSBitmapImageRep.FileType.jpeg, properties: [:])!
-
-        return jpegData.base64EncodedString()
     }
 }
 

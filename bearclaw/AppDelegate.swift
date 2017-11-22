@@ -14,7 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
     let popover = NSPopover()
     var eventMonitor: EventMonitor?
-    
+    static var popoverInstance: NSPopover = NSPopover()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         if let button = statusItem.button {
@@ -24,7 +24,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         popover.animates = false
         popover.contentViewController = ClipperViewController.freshController()
-        
+        AppDelegate.popoverInstance = popover // Keep a reference
         
         eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown]) { [weak self] event in
             if let strongSelf = self, strongSelf.popover.isShown {

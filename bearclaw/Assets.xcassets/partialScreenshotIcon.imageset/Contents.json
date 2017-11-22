@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "icon-screenshot-part.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "icons8-screenshot-50.png",
+      "filename" : "icon-screenshot-part@2x.png",
       "scale" : "2x"
     },
     {

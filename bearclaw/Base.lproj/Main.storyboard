@@ -674,9 +674,9 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="bearclaw" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="bearclaw" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
@@ -727,10 +727,10 @@
                                 </connections>
                             </button>
                             <button toolTip="Exit BearClaw" translatesAutoresizingMaskIntoConstraints="NO" id="RbS-Pd-evM">
-                                <rect key="frame" x="10" y="369" width="27" height="21"/>
+                                <rect key="frame" x="10" y="372" width="19" height="18"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="27" id="CK8-cs-SRJ"/>
-                                    <constraint firstAttribute="height" constant="21" id="pEv-VJ-f9D"/>
+                                    <constraint firstAttribute="width" constant="19" id="CK8-cs-SRJ"/>
+                                    <constraint firstAttribute="height" constant="18" id="pEv-VJ-f9D"/>
                                 </constraints>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="settingsIcon" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Q8K-Kl-Eyd">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -740,11 +740,11 @@
                                     <action selector="clickedOnSettingsButton:" target="XfG-lQ-9wD" id="Zxo-uU-cfp"/>
                                 </connections>
                             </button>
-                            <button toolTip="Clip full screenshot" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="Ut5-D4-igr">
-                                <rect key="frame" x="147" y="369" width="27" height="21"/>
+                            <button toolTip="Clip full screenshot" ambiguous="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="Ut5-D4-igr">
+                                <rect key="frame" x="165" y="369" width="18" height="18"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="27" id="4h4-QA-l3t"/>
-                                    <constraint firstAttribute="height" constant="21" id="JHu-yc-1Xj"/>
+                                    <constraint firstAttribute="width" constant="18" id="4h4-QA-l3t"/>
+                                    <constraint firstAttribute="height" constant="18" id="JHu-yc-1Xj"/>
                                 </constraints>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="fullScreenshotIcon" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Tgk-Zs-aqM">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -754,10 +754,22 @@
                                     <action selector="clickedOnFullScreenshotButton:" target="XfG-lQ-9wD" id="CKk-eF-etn"/>
                                 </connections>
                             </button>
+                            <button toolTip="Clip full screenshot" ambiguous="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="0s9-4o-cpE">
+                                <rect key="frame" x="128" y="369" width="18" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="70v-u8-ews"/>
+                                    <constraint firstAttribute="width" constant="18" id="UE6-2R-DIB"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="partialScreenshotIcon" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="b93-85-qR9">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="clickedOnPartialScreenshotButton:" target="XfG-lQ-9wD" id="2Ih-On-20I"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Ut5-D4-igr" firstAttribute="baseline" secondItem="RbS-Pd-evM" secondAttribute="baseline" id="956-Kx-37j"/>
-                            <constraint firstItem="Ut5-D4-igr" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="TeO-Mi-cSU"/>
                             <constraint firstItem="RbS-Pd-evM" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="10" id="fEd-YE-HBb"/>
                             <constraint firstItem="RbS-Pd-evM" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="10" id="iAP-su-8kN"/>
                         </constraints>
@@ -768,7 +780,7 @@
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <menu id="u1j-n2-Vfk">
+                <menu id="u1j-n2-Vfk" customClass="SettingsMenuController" customModule="bearclaw" customModuleProvider="target">
                     <items>
                         <menuItem title="Check for updates" id="lsF-JC-fsX">
                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -776,9 +788,15 @@
                         <menuItem isSeparatorItem="YES" id="bZS-NR-6dm"/>
                         <menuItem title="About" id="mCL-Xt-8al">
                             <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="aboutItemClicked:" target="u1j-n2-Vfk" id="fnJ-Qx-Msd"/>
+                            </connections>
                         </menuItem>
                         <menuItem title="Quit BearClaw" id="cgM-aH-0H2">
                             <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="quitItemClicked:" target="u1j-n2-Vfk" id="jjg-rY-bXy"/>
+                            </connections>
                         </menuItem>
                     </items>
                 </menu>
@@ -787,7 +805,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="fullScreenshotIcon" width="72" height="64"/>
-        <image name="settingsIcon" width="128" height="128"/>
+        <image name="fullScreenshotIcon" width="21" height="21"/>
+        <image name="partialScreenshotIcon" width="21" height="21"/>
+        <image name="settingsIcon" width="21" height="21"/>
     </resources>
 </document>
