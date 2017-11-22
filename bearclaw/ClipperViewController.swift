@@ -14,26 +14,17 @@ class ClipperViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+        
+        // Style the textView
+        textView.font = NSFont(name: "Avenir Next", size: 15)
+        textView.textContainerInset = NSMakeSize(10, 10)
     }
     
     @IBAction func clickedOnFullScreenshotButton(_ sender: NSButton) {
-        
-        //let urlToOpen = "bear://x-callback-url/create?text=ho&file=\(self.TakeScreensShots())&filename=screenshot.jpg"
-        //print(urlToOpen)
-        //let nsURLObject = NSURL(string: urlToOpen)
-        //NSWorkspace.shared.open(nsURLObject! as URL)
-        
-        //BearCommunicator().createNote(contents: "Screenshot taken on XXX",
-        //                              fileName: "screenshot.jpg",
-        //                              fileContents: self.TakeScreensShots())
-        
-        
         NewBearNote()
             .setContents("Screenshot taken on XXX")
             .setFile(fileName: "screenshot.jpg", fileContents: self.TakeScreensShots())
             .sendToBear()
-        
     }
     
     @IBAction func clickedOnSaveToBear(_ sender: NSButton) {
@@ -41,12 +32,11 @@ class ClipperViewController: NSViewController {
             .setContents(self.textView.string)
             .sendToBear()
         
-        //BearCommunicator().createNote(contents: self.textView.string)
+        // Reset the textView
         self.textView.textStorage?.mutableString.setString("")
     }
     
     func TakeScreensShots() -> String{
-        
         let displayID = CGMainDisplayID()
         let imageRef = CGDisplayCreateImage(displayID)!
         let bitmapRep = NSBitmapImageRep(cgImage: imageRef)
