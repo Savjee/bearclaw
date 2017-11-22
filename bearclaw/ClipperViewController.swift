@@ -11,6 +11,7 @@ import Cocoa
 class ClipperViewController: NSViewController {
 
     @IBOutlet var textView: NSTextView!
+    @IBOutlet var settingsMenu: NSMenu!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,10 @@ class ClipperViewController: NSViewController {
             .setContents("Screenshot taken on XXX")
             .setFile(fileName: "screenshot.jpg", fileContents: self.TakeScreensShots())
             .sendToBear()
+    }
+    
+    @IBAction func clickedOnSettingsButton(_ sender: NSButton) {
+        settingsMenu.popUp(positioning: settingsMenu.item(at: 0), at: NSEvent.mouseLocation, in: nil)
     }
     
     @IBAction func clickedOnSaveToBear(_ sender: NSButton) {
