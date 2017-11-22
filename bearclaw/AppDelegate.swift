@@ -21,6 +21,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             button.image = NSImage(named:NSImage.Name("menubarIcon"))
             button.action = #selector(togglePopover(_:))
         }
+        
+        popover.animates = false
         popover.contentViewController = ClipperViewController.freshController()
         
         
