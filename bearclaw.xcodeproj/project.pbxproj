@@ -65,6 +65,15 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		25979EC81FC6B17900565515 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				259F06721FC55BBC00FD0806 /* ClipperViewController.swift */,
+				2543B08F1FC5E19000A9F5E0 /* SettingsMenuController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		259F06561FC559F800FD0806 = {
 			isa = PBXGroup;
 			children = (
@@ -84,15 +93,14 @@
 		259F06611FC559F800FD0806 /* bearclaw */ = {
 			isa = PBXGroup;
 			children = (
-				2543B0851FC59D2400A9F5E0 /* BearCommunicator */,
-				2543B08C1FC5DE4C00A9F5E0 /* Utils */,
-				2543B08A1FC5AB2400A9F5E0 /* Assets.xcassets */,
 				259F06621FC559F800FD0806 /* AppDelegate.swift */,
-				259F06681FC559F800FD0806 /* Main.storyboard */,
-				259F066B1FC559F800FD0806 /* Info.plist */,
+				2543B08A1FC5AB2400A9F5E0 /* Assets.xcassets */,
 				259F066C1FC559F800FD0806 /* bearclaw.entitlements */,
-				259F06721FC55BBC00FD0806 /* ClipperViewController.swift */,
-				2543B08F1FC5E19000A9F5E0 /* SettingsMenuController.swift */,
+				2543B0851FC59D2400A9F5E0 /* BearCommunicator */,
+				25979EC81FC6B17900565515 /* Controllers */,
+				259F066B1FC559F800FD0806 /* Info.plist */,
+				259F06681FC559F800FD0806 /* Main.storyboard */,
+				2543B08C1FC5DE4C00A9F5E0 /* Utils */,
 			);
 			path = bearclaw;
 			sourceTree = "<group>";

@@ -12,7 +12,6 @@ class ClipperViewController: NSViewController {
 
     @IBOutlet var textView: NSTextView!
     @IBOutlet var settingsMenu: NSMenu!
-    let screenshotTool = ScreenshotTool()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +29,7 @@ class ClipperViewController: NSViewController {
         
         NewBearNote()
             .setContents(generateNameForScreenshot())
-            .setFile(fileName: "screenshot.png", fileContents: screenshotTool.captureFullscreen())
+            .setFile(fileName: "screenshot.png", fileContents: ScreenshotTool().captureFullscreen())
             .sendToBear()
     }
     
@@ -43,7 +42,7 @@ class ClipperViewController: NSViewController {
 
         NewBearNote()
             .setContents(generateNameForScreenshot())
-            .setFile(fileName: "screenshot.png", fileContents: screenshotTool.captureUserSelection())
+            .setFile(fileName: "screenshot.png", fileContents: ScreenshotTool().captureUserSelection())
             .sendToBear()
     }
     
