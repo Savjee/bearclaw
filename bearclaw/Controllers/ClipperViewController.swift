@@ -31,8 +31,8 @@ class ClipperViewController: NSViewController {
         
         NewBearNote()
             .setFile(fileName: generateNameForScreenshot(), fileContents: ScreenshotTool().captureFullscreen())
-            .setAction(BearAction.addFile)
-            //.setTitle(generateNameForScreenshot())
+            .setAction(BearAction.createNote)
+            .setTitle(generateNameForScreenshot())
             .sendToBear()
     }
     
@@ -45,8 +45,8 @@ class ClipperViewController: NSViewController {
 
         NewBearNote()
             .setFile(fileName: generateNameForScreenshot(), fileContents: ScreenshotTool().captureUserSelection())
-            .setAction(BearAction.addFile)
-            //.setTitle(generateNameForScreenshot())
+            .setAction(BearAction.createNote)
+            .setTitle(generateNameForScreenshot())
             .sendToBear()
     }
     
