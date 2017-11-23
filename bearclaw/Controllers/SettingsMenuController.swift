@@ -16,6 +16,7 @@ class SettingsMenuController : NSMenu{
     
     
     @IBAction func aboutItemClicked(_ sender: NSMenuItem) {
+        AppDelegate.popoverInstance.close()
         NSApplication.shared.orderFrontStandardAboutPanel(sender)
         NSApplication.shared.activate(ignoringOtherApps: true)
     }
