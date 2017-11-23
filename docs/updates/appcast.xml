@@ -6,9 +6,11 @@
         <language>en</language>
         <item>
             <title>Version 2.0 (2 bugs fixed; 3 new features)</title>
-            <sparkle:releaseNotesLink>
-                http://you.com/app/2.0.html
-            </sparkle:releaseNotesLink>
+            <description>
+                <![CDATA[
+                    <p>Initial release of Bearclaw!</p>
+                ]]>
+            </description>
             <pubDate>Thu, 23 Nov 2017 14:37:11 +0000</pubDate>
             <enclosure url="https://github.com/Savjee/bearclaw/releases/download/v1.0/bearclaw.zip" sparkle:version="1.0" length="4935079" type="application/octet-stream" />
         </item>
