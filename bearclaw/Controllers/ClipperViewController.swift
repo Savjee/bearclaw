@@ -65,7 +65,7 @@ class ClipperViewController: NSViewController {
     
     func generateNameForScreenshot() -> String{
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd_HH.MM.ss"
+        dateFormatter.dateFormat = "yyyy-MM-dd_HH.mm.ss"
         
         return "Screenshot_" + dateFormatter.string(from: Date()) + ".png"
     }
