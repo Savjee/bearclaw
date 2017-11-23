@@ -22,14 +22,17 @@ class ClipperViewController: NSViewController {
         
         // Focus directly on the textview
         textView.window?.makeFirstResponder(textView)
+        
+        NSEvent.addLocalMonitorForEvents(matching: NSEvent.EventTypeMask.keyDown, handler: handleKeyboardEvent(_:))
     }
     
     @IBAction func clickedOnFullScreenshotButton(_ sender: NSButton) {
         AppDelegate.popoverInstance.close()
         
         NewBearNote()
-            .setContents(generateNameForScreenshot())
-            .setFile(fileName: "screenshot.png", fileContents: ScreenshotTool().captureFullscreen())
+            .setFile(fileName: generateNameForScreenshot(), fileContents: ScreenshotTool().captureFullscreen())
+            .setAction(BearAction.addFile)
+            //.setTitle(generateNameForScreenshot())
             .sendToBear()
     }
     
@@ -41,10 +44,24 @@ class ClipperViewController: NSViewController {
         AppDelegate.popoverInstance.close()
 
         NewBearNote()
-            .setContents(generateNameForScreenshot())
-            .setFile(fileName: "screenshot.png", fileContents: ScreenshotTool().captureUserSelection())
+            .setFile(fileName: generateNameForScreenshot(), fileContents: ScreenshotTool().captureUserSelection())
+            .setAction(BearAction.addFile)
+            //.setTitle(generateNameForScreenshot())
             .sendToBear()
     }
+    
+    @IBAction func clickedOnSaveToBear(_ sender: Any) {
+        AppDelegate.popoverInstance.close()
+
+        NewBearNote()
+            .setContents(self.textView.string)
+            .setAction(BearAction.createNote)
+            .sendToBear()
+        
+        // Reset the textView
+        self.textView.textStorage?.mutableString.setString("")
+    }
+    
     
     func generateNameForScreenshot() -> String{
         let dateFormatter = DateFormatter()
@@ -53,17 +70,21 @@ class ClipperViewController: NSViewController {
         return "Screenshot_" + dateFormatter.string(from: Date()) + ".png"
     }
     
-    
-    @IBAction func clickedOnSaveToBear(_ sender: NSButton) {
-        AppDelegate.popoverInstance.close()
-
-
-        NewBearNote()
-            .setContents(self.textView.string)
-            .sendToBear()
+    func handleKeyboardEvent(_ event: NSEvent) -> NSEvent{
         
-        // Reset the textView
-        self.textView.textStorage?.mutableString.setString("")
+        // cmd + return -> save
+        if event.modifierFlags.contains(NSEvent.ModifierFlags.command){
+            if event.keyCode == 36{
+                clickedOnSaveToBear("")
+            }
+        }
+        
+        // Escape key
+        if event.keyCode == 53{
+            AppDelegate.popoverInstance.close()
+        }
+        
+        return event
     }
 }
 

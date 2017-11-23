@@ -11,8 +11,8 @@ import Cocoa
 
 class BearCommunicator{
     
-    static func sendToBear(arguments: [BearArgument]){
-        var url = "bear://x-callback-url/create?"
+    static func sendToBear(action: BearAction, arguments: [BearArgument]){
+        var url = "bear://x-callback-url/\(action.rawValue)?"
         
         
         for (index, arg) in arguments.enumerated() {
@@ -37,7 +37,3 @@ class BearCommunicator{
         NSWorkspace.shared.open(nsURLObject!)
     }
 }
-
-
-
-

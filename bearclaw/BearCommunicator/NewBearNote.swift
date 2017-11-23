@@ -10,6 +10,7 @@ import Foundation
 
 class NewBearNote{
     
+    var action = BearAction.createNote
     var arguments = [BearArgument]()
     
     func setTitle(_ title: String) -> NewBearNote {
@@ -28,7 +29,12 @@ class NewBearNote{
         return self
     }
     
+    func setAction(_ action: BearAction) -> NewBearNote {
+        self.action = action
+        return self
+    }
+    
     func sendToBear(){
-        BearCommunicator.sendToBear(arguments: self.arguments)
+        BearCommunicator.sendToBear(action: self.action, arguments: self.arguments)
     }
 }
