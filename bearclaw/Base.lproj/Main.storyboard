@@ -688,18 +688,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Gq-Y6-NJE">
-                                <rect key="frame" x="0.0" y="61" width="320" height="296"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <clipView key="contentView" ambiguous="YES" copiesOnScroll="NO" id="LDY-ys-vQU">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="296"/>
+                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Gq-Y6-NJE">
+                                <rect key="frame" x="0.0" y="41" width="320" height="321"/>
+                                <clipView key="contentView" copiesOnScroll="NO" id="LDY-ys-vQU">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="321"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView ambiguous="YES" drawsBackground="NO" importsGraphics="NO" richText="NO" verticallyResizable="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" allowsNonContiguousLayout="YES" smartInsertDelete="YES" id="bQe-ny-Bz6">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="296"/>
+                                        <textView drawsBackground="NO" importsGraphics="NO" richText="NO" verticallyResizable="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" allowsNonContiguousLayout="YES" smartInsertDelete="YES" id="bQe-ny-Bz6">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="321"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="320" height="296"/>
+                                            <size key="minSize" width="320" height="321"/>
                                             <size key="maxSize" width="486" height="10000000"/>
                                             <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </textView>
@@ -715,9 +714,11 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i2G-5z-AIC">
-                                <rect key="frame" x="101" y="13" width="119" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="i2G-5z-AIC">
+                                <rect key="frame" x="101" y="3" width="119" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="tpl-kj-sML"/>
+                                </constraints>
                                 <buttonCell key="cell" type="push" title="Send to Bear" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="K3x-vb-Sy5">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -740,38 +741,61 @@
                                     <action selector="clickedOnSettingsButton:" target="XfG-lQ-9wD" id="Zxo-uU-cfp"/>
                                 </connections>
                             </button>
-                            <button toolTip="Clip full screenshot" ambiguous="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="Ut5-D4-igr">
-                                <rect key="frame" x="165" y="369" width="18" height="18"/>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="cqu-kx-Dpi" userLabel="Center buttons">
+                                <rect key="frame" x="132" y="372" width="56" height="18"/>
+                                <subviews>
+                                    <button toolTip="Clip full screenshot" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="Ut5-D4-igr">
+                                        <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="18" id="4h4-QA-l3t"/>
+                                            <constraint firstAttribute="height" constant="18" id="JHu-yc-1Xj"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="fullScreenshotIcon" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Tgk-Zs-aqM">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="clickedOnFullScreenshotButton:" target="XfG-lQ-9wD" id="CKk-eF-etn"/>
+                                        </connections>
+                                    </button>
+                                    <button toolTip="Clip full screenshot" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="0s9-4o-cpE">
+                                        <rect key="frame" x="38" y="0.0" width="18" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="70v-u8-ews"/>
+                                            <constraint firstAttribute="width" constant="18" id="UE6-2R-DIB"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="partialScreenshotIcon" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="b93-85-qR9">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="clickedOnPartialScreenshotButton:" target="XfG-lQ-9wD" id="2Ih-On-20I"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="18" id="4h4-QA-l3t"/>
-                                    <constraint firstAttribute="height" constant="18" id="JHu-yc-1Xj"/>
+                                    <constraint firstAttribute="bottom" secondItem="0s9-4o-cpE" secondAttribute="bottom" id="4GK-vp-7p7"/>
+                                    <constraint firstItem="Ut5-D4-igr" firstAttribute="leading" secondItem="cqu-kx-Dpi" secondAttribute="leading" id="7FL-Pn-Pdd"/>
+                                    <constraint firstItem="Ut5-D4-igr" firstAttribute="top" secondItem="cqu-kx-Dpi" secondAttribute="top" id="8rk-Cu-D7J"/>
+                                    <constraint firstAttribute="height" constant="18" id="Ajz-C0-X5u"/>
+                                    <constraint firstAttribute="width" constant="56" id="Uxb-cX-crF"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ut5-D4-igr" secondAttribute="bottom" id="WMm-vZ-cBr"/>
+                                    <constraint firstAttribute="trailing" secondItem="0s9-4o-cpE" secondAttribute="trailing" id="Xwa-aZ-ctb"/>
+                                    <constraint firstItem="0s9-4o-cpE" firstAttribute="top" secondItem="cqu-kx-Dpi" secondAttribute="top" id="dlN-wr-xxd"/>
                                 </constraints>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="fullScreenshotIcon" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Tgk-Zs-aqM">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="clickedOnFullScreenshotButton:" target="XfG-lQ-9wD" id="CKk-eF-etn"/>
-                                </connections>
-                            </button>
-                            <button toolTip="Clip full screenshot" ambiguous="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="0s9-4o-cpE">
-                                <rect key="frame" x="128" y="369" width="18" height="18"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="70v-u8-ews"/>
-                                    <constraint firstAttribute="width" constant="18" id="UE6-2R-DIB"/>
-                                </constraints>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="partialScreenshotIcon" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="b93-85-qR9">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="clickedOnPartialScreenshotButton:" target="XfG-lQ-9wD" id="2Ih-On-20I"/>
-                                </connections>
-                            </button>
+                            </customView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="cqu-kx-Dpi" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="10" id="NqP-eS-oic"/>
+                            <constraint firstItem="8Gq-Y6-NJE" firstAttribute="width" secondItem="m2S-Jp-Qdl" secondAttribute="width" id="OW1-Wu-hoP"/>
+                            <constraint firstAttribute="bottom" secondItem="i2G-5z-AIC" secondAttribute="bottom" constant="10" id="Rfk-z0-uFG"/>
+                            <constraint firstItem="8Gq-Y6-NJE" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="ZeA-dM-TAF"/>
+                            <constraint firstItem="i2G-5z-AIC" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="bDa-2t-MGO"/>
                             <constraint firstItem="RbS-Pd-evM" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="10" id="fEd-YE-HBb"/>
                             <constraint firstItem="RbS-Pd-evM" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="10" id="iAP-su-8kN"/>
+                            <constraint firstItem="8Gq-Y6-NJE" firstAttribute="top" secondItem="RbS-Pd-evM" secondAttribute="bottom" constant="10" id="m0g-yc-Geh"/>
+                            <constraint firstItem="i2G-5z-AIC" firstAttribute="top" secondItem="8Gq-Y6-NJE" secondAttribute="bottom" constant="10" id="oPy-aX-jZc"/>
+                            <constraint firstItem="cqu-kx-Dpi" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="sba-Yg-mxL"/>
                         </constraints>
                     </view>
                     <connections>
