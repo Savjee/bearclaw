@@ -12,6 +12,7 @@
 		2543B08B1FC5AB2400A9F5E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2543B08A1FC5AB2400A9F5E0 /* Assets.xcassets */; };
 		2543B08E1FC5DE6600A9F5E0 /* ScreenshotTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2543B08D1FC5DE6600A9F5E0 /* ScreenshotTool.swift */; };
 		2543B0901FC5E19000A9F5E0 /* SettingsMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2543B08F1FC5E19000A9F5E0 /* SettingsMenuController.swift */; };
+		25979ECB1FC6DD4700565515 /* BearAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25979ECA1FC6DD4700565515 /* BearAction.swift */; };
 		259F06631FC559F800FD0806 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259F06621FC559F800FD0806 /* AppDelegate.swift */; };
 		259F066A1FC559F800FD0806 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 259F06681FC559F800FD0806 /* Main.storyboard */; };
 		259F06731FC55BBC00FD0806 /* ClipperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259F06721FC55BBC00FD0806 /* ClipperViewController.swift */; };
@@ -25,11 +26,12 @@
 		2543B08A1FC5AB2400A9F5E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2543B08D1FC5DE6600A9F5E0 /* ScreenshotTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotTool.swift; sourceTree = "<group>"; };
 		2543B08F1FC5E19000A9F5E0 /* SettingsMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMenuController.swift; sourceTree = "<group>"; };
+		25979EC91FC6CD7800565515 /* bearclaw.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = bearclaw.entitlements; sourceTree = "<group>"; };
+		25979ECA1FC6DD4700565515 /* BearAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearAction.swift; sourceTree = "<group>"; };
 		259F065F1FC559F800FD0806 /* bearclaw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bearclaw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		259F06621FC559F800FD0806 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		259F06691FC559F800FD0806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		259F066B1FC559F800FD0806 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		259F066C1FC559F800FD0806 /* bearclaw.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bearclaw.entitlements; sourceTree = "<group>"; };
 		259F06721FC55BBC00FD0806 /* ClipperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipperViewController.swift; sourceTree = "<group>"; };
 		259F06741FC55D1300FD0806 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		259F06761FC55F0200FD0806 /* BearCommunicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearCommunicator.swift; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 				259F06761FC55F0200FD0806 /* BearCommunicator.swift */,
 				2543B0861FC59D4100A9F5E0 /* NewBearNote.swift */,
 				2543B0881FC59D5500A9F5E0 /* BearArgument.swift */,
+				25979ECA1FC6DD4700565515 /* BearAction.swift */,
 			);
 			path = BearCommunicator;
 			sourceTree = "<group>";
@@ -93,9 +96,9 @@
 		259F06611FC559F800FD0806 /* bearclaw */ = {
 			isa = PBXGroup;
 			children = (
+				25979EC91FC6CD7800565515 /* bearclaw.entitlements */,
 				259F06621FC559F800FD0806 /* AppDelegate.swift */,
 				2543B08A1FC5AB2400A9F5E0 /* Assets.xcassets */,
-				259F066C1FC559F800FD0806 /* bearclaw.entitlements */,
 				2543B0851FC59D2400A9F5E0 /* BearCommunicator */,
 				25979EC81FC6B17900565515 /* Controllers */,
 				259F066B1FC559F800FD0806 /* Info.plist */,
@@ -140,7 +143,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -182,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				259F06731FC55BBC00FD0806 /* ClipperViewController.swift in Sources */,
+				25979ECB1FC6DD4700565515 /* BearAction.swift in Sources */,
 				2543B0901FC5E19000A9F5E0 /* SettingsMenuController.swift in Sources */,
 				259F06771FC55F0200FD0806 /* BearCommunicator.swift in Sources */,
 				2543B08E1FC5DE6600A9F5E0 /* ScreenshotTool.swift in Sources */,
