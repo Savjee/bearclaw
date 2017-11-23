@@ -34,6 +34,10 @@
 	<string></string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>SUFeedURL</key>
+	<string>https://savjee.github.io/bearclaw/updates/appcast.xml</string>
+	<key>SUEnableAutomaticChecks</key>
+	<true/>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 </dict>

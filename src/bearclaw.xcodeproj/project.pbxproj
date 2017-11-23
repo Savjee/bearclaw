@@ -14,12 +14,27 @@
 		2543B0901FC5E19000A9F5E0 /* SettingsMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2543B08F1FC5E19000A9F5E0 /* SettingsMenuController.swift */; };
 		25979ECB1FC6DD4700565515 /* BearAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25979ECA1FC6DD4700565515 /* BearAction.swift */; };
 		25979ECD1FC6FAB500565515 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 25979ECC1FC6FAB500565515 /* Credits.html */; };
+		25979ED21FC7037F00565515 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25979ED11FC7037F00565515 /* Sparkle.framework */; };
+		25979ED41FC7046E00565515 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25979ED11FC7037F00565515 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		259F06631FC559F800FD0806 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259F06621FC559F800FD0806 /* AppDelegate.swift */; };
 		259F066A1FC559F800FD0806 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 259F06681FC559F800FD0806 /* Main.storyboard */; };
 		259F06731FC55BBC00FD0806 /* ClipperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259F06721FC55BBC00FD0806 /* ClipperViewController.swift */; };
 		259F06751FC55D1300FD0806 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259F06741FC55D1300FD0806 /* EventMonitor.swift */; };
 		259F06771FC55F0200FD0806 /* BearCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259F06761FC55F0200FD0806 /* BearCommunicator.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		25979ED31FC7046B00565515 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				25979ED41FC7046E00565515 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2543B0861FC59D4100A9F5E0 /* NewBearNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBearNote.swift; sourceTree = "<group>"; };
@@ -30,6 +45,7 @@
 		25979EC91FC6CD7800565515 /* bearclaw.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = bearclaw.entitlements; sourceTree = "<group>"; };
 		25979ECA1FC6DD4700565515 /* BearAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearAction.swift; sourceTree = "<group>"; };
 		25979ECC1FC6FAB500565515 /* Credits.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
+		25979ED11FC7037F00565515 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		259F065F1FC559F800FD0806 /* bearclaw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bearclaw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		259F06621FC559F800FD0806 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		259F06691FC559F800FD0806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -44,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25979ED21FC7037F00565515 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,11 +96,20 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		25979ECE1FC7033F00565515 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				25979ED11FC7037F00565515 /* Sparkle.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		259F06561FC559F800FD0806 = {
 			isa = PBXGroup;
 			children = (
 				259F06611FC559F800FD0806 /* bearclaw */,
 				259F06601FC559F800FD0806 /* Products */,
+				25979ECE1FC7033F00565515 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +147,7 @@
 				259F065B1FC559F800FD0806 /* Sources */,
 				259F065C1FC559F800FD0806 /* Frameworks */,
 				259F065D1FC559F800FD0806 /* Resources */,
+				25979ED31FC7046B00565515 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -327,6 +354,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KN76H2AC7V;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = bearclaw/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -343,6 +374,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KN76H2AC7V;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = bearclaw/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;

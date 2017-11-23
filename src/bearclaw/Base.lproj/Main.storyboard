@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13529"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -804,10 +805,14 @@
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="DwM-Pc-f5h" customClass="SUUpdater"/>
                 <menu id="u1j-n2-Vfk" customClass="SettingsMenuController" customModule="bearclaw" customModuleProvider="target">
                     <items>
                         <menuItem title="Check for updates" id="lsF-JC-fsX">
                             <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="checkForUpdates:" target="DwM-Pc-f5h" id="i8e-T3-J93"/>
+                            </connections>
                         </menuItem>
                         <menuItem isSeparatorItem="YES" id="bZS-NR-6dm"/>
                         <menuItem title="About" id="mCL-Xt-8al">
