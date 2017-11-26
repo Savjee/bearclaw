@@ -32,13 +32,20 @@ class ScreenshotTool{
         ]
         task.launch()
         task.waitUntilExit()
-
-        let img = NSImage(pasteboard: NSPasteboard.general)
-        let rep = NSBitmapImageRep(data: (img?.tiffRepresentation)!)!
         
+        if !task.isRunning {
+            let status = task.terminationStatus
+            
+            if status == 0 {
+                let img = NSImage(pasteboard: NSPasteboard.general)
+                let rep = NSBitmapImageRep(data: (img?.tiffRepresentation)!)!
+                
+                
+                return getBase64(bitmapRepresentation: rep)
+            }
+        }
         
-        return getBase64(bitmapRepresentation: rep)
-        
+        return ""
     }
     
     /**

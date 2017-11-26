@@ -42,12 +42,17 @@ class ClipperViewController: NSViewController {
     
     @IBAction func clickedOnPartialScreenshotButton(_ sender: NSButton) {
         AppDelegate.popoverInstance.close()
-
-        NewBearNote()
-            .setFile(fileName: generateNameForScreenshot(), fileContents: ScreenshotTool().captureUserSelection())
-            .setAction(BearAction.createNote)
-            .setTitle(generateNameForScreenshot())
-            .sendToBear()
+        
+        let base64Image = ScreenshotTool().captureUserSelection()
+        
+        if base64Image != ""{
+            NewBearNote()
+                .setFile(fileName: generateNameForScreenshot(), fileContents: base64Image)
+                .setAction(BearAction.createNote)
+                .setTitle(generateNameForScreenshot())
+                .sendToBear()
+        }
+        
     }
     
     @IBAction func clickedOnSaveToBear(_ sender: Any) {
