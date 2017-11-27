@@ -5,6 +5,22 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
+            <title>Version 1.0.1</title>
+            <description>
+                <![CDATA[
+                    <p>Fixed a few small bugs:</p>
+                    <ul>
+                        <li>Always focus on the text field when opening Bearclaw</li>
+                        <li>Fixed a bug that crashed Bearclaw if you hit "esc" while taking a screenshot (Reported by trix180 on Reddit)</li>
+                    </ul>
+
+                    <p>If you have suggestions or feedback, let me know on <a href="https://github.com/Savjee/bearclaw">GitHub</a>!</p>
+                ]]>
+            </description>
+            <pubDate>Mon, 27 Nov 2017 09:20:11 +0000</pubDate>
+            <enclosure url="https://github.com/Savjee/bearclaw/releases/download/v1.0.1/bearclaw-v1.0.1.zip" sparkle:version="1.0.1" length="4935717" type="application/octet-stream" />
+        </item>
+        <item>
             <title>Version 1.0</title>
             <description>
                 <![CDATA[
