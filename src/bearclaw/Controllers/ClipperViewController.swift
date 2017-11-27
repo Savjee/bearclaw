@@ -26,6 +26,10 @@ class ClipperViewController: NSViewController {
         NSEvent.addLocalMonitorForEvents(matching: NSEvent.EventTypeMask.keyDown, handler: handleKeyboardEvent(_:))
     }
     
+    override func viewDidAppear() {
+        NSApplication.shared.activate(ignoringOtherApps: true)
+    }
+    
     @IBAction func clickedOnFullScreenshotButton(_ sender: NSButton) {
         AppDelegate.popoverInstance.close()
         
