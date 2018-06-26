@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string></string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIconFile</key>
@@ -20,6 +22,8 @@
 	<string>1.0.1</string>
 	<key>CFBundleVersion</key>
 	<string>1.0.1</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.productivity</string>
 	<key>LSMinimumSystemVersion</key>
@@ -30,15 +34,11 @@
 	<string>Copyright © 2017 Savjee. All rights reserved.</string>
 	<key>NSMainStoryboardFile</key>
 	<string>Main</string>
-	<key>CFBundleDisplayName</key>
-	<string></string>
-	<key>ITSAppUsesNonExemptEncryption</key>
-	<false/>
-	<key>SUFeedURL</key>
-	<string>https://savjee.github.io/bearclaw/updates/appcast.xml</string>
-	<key>SUEnableAutomaticChecks</key>
-	<true/>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>SUEnableAutomaticChecks</key>
+	<true/>
+	<key>SUFeedURL</key>
+	<string>https://savjee.github.io/bearclaw/updates/appcast.xml</string>
 </dict>
 </plist>
