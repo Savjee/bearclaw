@@ -1,6 +1,6 @@
-# bearclaw
+# Bearclaw
 
-Menubar application that allows you to quickly create notes/screenshots and send them to [Bear](https://www.bear-writer.com/)
+Quickly create notes/screenshots from your menubar and send them to [Bear](https://www.bear-writer.com/).
 
 ![Screenshot of Bearclaw](https://savjee.github.io/bearclaw/img/screenshot.png)
 ![Screenshot of Bearclaw in dark mode](https://savjee.github.io/bearclaw/img/screenshot-dark.png)
