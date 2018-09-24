@@ -101,9 +101,9 @@ extension ClipperViewController {
     // MARK: Storyboard instantiation
     static func freshController() -> ClipperViewController {
         //1.
-        let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+        let storyboard = NSStoryboard(name: "Main", bundle: nil)
         //2.
-        let identifier = NSStoryboard.SceneIdentifier(rawValue: "ClipperViewController")
+        let identifier = "ClipperViewController"
         //3.
         guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier) as? ClipperViewController else {
             fatalError("Why cant i find QuotesViewController? - Check Main.storyboard")
