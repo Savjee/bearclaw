@@ -20,6 +20,10 @@ class ClipperViewController: NSViewController {
         textView.font = NSFont(name: "Avenir Next", size: 15)
         textView.textContainerInset = NSMakeSize(10, 10)
         
+        // Make sure that the text color is dynamically set by the system
+        // This is only required for older macOS versions.
+        textView.textColor = NSColor.headerTextColor;
+        
         // Focus directly on the textview
         textView.window?.makeFirstResponder(textView)
         
