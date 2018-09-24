@@ -2,7 +2,8 @@
 
 Menubar application that allows you to quickly create notes/screenshots and send them to [Bear](https://www.bear-writer.com/)
 
-![Screenshot of bearclaw](https://savjee.github.io/bearclaw/img/screenshot.png)
+![Screenshot of Bearclaw](https://savjee.github.io/bearclaw/img/screenshot.png)
+![Screenshot of Bearclaw in dark mode](https://savjee.github.io/bearclaw/img/screenshot-dark.png)
 
 [Download it here](https://github.com/Savjee/bearclaw/releases/)
 
