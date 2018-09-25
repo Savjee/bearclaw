@@ -5,6 +5,21 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
+            <title>Version 1.1.0</title>
+            <description>
+                <![CDATA[
+                    <p>Fixes:</p>
+                    <ul>
+                        <li>Added support for dark mode on macOS Mojave</li>
+                    </ul>
+
+                    <p>If you have suggestions or feedback, let me know on <a href="https://github.com/Savjee/bearclaw">GitHub</a>!</p>
+                ]]>
+            </description>
+            <pubDate>Tue, 25 Sep 2018 09:34:11 +0000</pubDate>
+            <enclosure url="https://github.com/Savjee/bearclaw/releases/download/v1.1.0/bearclaw-v1.1.0.zip" sparkle:version="1.1.0" length="5361721" type="application/octet-stream" />
+        </item>
+        <item>
             <title>Version 1.0.1</title>
             <description>
                 <![CDATA[
