@@ -20,6 +20,10 @@ class ClipperViewController: NSViewController {
         textView.font = NSFont(name: "Avenir Next", size: 15)
         textView.textContainerInset = NSMakeSize(10, 10)
         
+        // Make sure that the text color is dynamically set by the system
+        // This is only required for older macOS versions.
+        textView.textColor = NSColor.headerTextColor;
+        
         // Focus directly on the textview
         textView.window?.makeFirstResponder(textView)
         
@@ -101,9 +105,9 @@ extension ClipperViewController {
     // MARK: Storyboard instantiation
     static func freshController() -> ClipperViewController {
         //1.
-        let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+        let storyboard = NSStoryboard(name: "Main", bundle: nil)
         //2.
-        let identifier = NSStoryboard.SceneIdentifier(rawValue: "ClipperViewController")
+        let identifier = "ClipperViewController"
         //3.
         guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier) as? ClipperViewController else {
             fatalError("Why cant i find QuotesViewController? - Check Main.storyboard")
