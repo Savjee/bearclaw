@@ -12,10 +12,10 @@
 		2543B08B1FC5AB2400A9F5E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2543B08A1FC5AB2400A9F5E0 /* Assets.xcassets */; };
 		2543B08E1FC5DE6600A9F5E0 /* ScreenshotTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2543B08D1FC5DE6600A9F5E0 /* ScreenshotTool.swift */; };
 		2543B0901FC5E19000A9F5E0 /* SettingsMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2543B08F1FC5E19000A9F5E0 /* SettingsMenuController.swift */; };
+		25804A7222CE031900C7E16C /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25804A7122CE031900C7E16C /* Sparkle.framework */; };
+		25804A7322CE031A00C7E16C /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25804A7122CE031900C7E16C /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		25979ECB1FC6DD4700565515 /* BearAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25979ECA1FC6DD4700565515 /* BearAction.swift */; };
 		25979ECD1FC6FAB500565515 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 25979ECC1FC6FAB500565515 /* Credits.html */; };
-		25979ED21FC7037F00565515 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25979ED11FC7037F00565515 /* Sparkle.framework */; };
-		25979ED41FC7046E00565515 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25979ED11FC7037F00565515 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		259F06631FC559F800FD0806 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259F06621FC559F800FD0806 /* AppDelegate.swift */; };
 		259F066A1FC559F800FD0806 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 259F06681FC559F800FD0806 /* Main.storyboard */; };
 		259F06731FC55BBC00FD0806 /* ClipperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259F06721FC55BBC00FD0806 /* ClipperViewController.swift */; };
@@ -30,7 +30,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				25979ED41FC7046E00565515 /* Sparkle.framework in CopyFiles */,
+				25804A7322CE031A00C7E16C /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,10 +42,10 @@
 		2543B08A1FC5AB2400A9F5E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2543B08D1FC5DE6600A9F5E0 /* ScreenshotTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotTool.swift; sourceTree = "<group>"; };
 		2543B08F1FC5E19000A9F5E0 /* SettingsMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMenuController.swift; sourceTree = "<group>"; };
+		25804A7122CE031900C7E16C /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		25979EC91FC6CD7800565515 /* bearclaw.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = bearclaw.entitlements; sourceTree = "<group>"; };
 		25979ECA1FC6DD4700565515 /* BearAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearAction.swift; sourceTree = "<group>"; };
 		25979ECC1FC6FAB500565515 /* Credits.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
-		25979ED11FC7037F00565515 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		259F065F1FC559F800FD0806 /* bearclaw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bearclaw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		259F06621FC559F800FD0806 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		259F06691FC559F800FD0806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25979ED21FC7037F00565515 /* Sparkle.framework in Frameworks */,
+				25804A7222CE031900C7E16C /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +99,7 @@
 		25979ECE1FC7033F00565515 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				25979ED11FC7037F00565515 /* Sparkle.framework */,
+				25804A7122CE031900C7E16C /* Sparkle.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -173,6 +173,9 @@
 						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.HardenedRuntime = {
+								enabled = 0;
+							};
 							com.apple.Sandbox = {
 								enabled = 0;
 							};
