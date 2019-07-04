@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -620,7 +620,7 @@
                                         <menuItem title="Show Sidebar" keyEquivalent="s" id="kIP-vf-haE">
                                             <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
                                             <connections>
-                                                <action selector="toggleSourceList:" target="Ady-hI-5gd" id="iwa-gc-5KM"/>
+                                                <action selector="toggleSidebar:" target="Ady-hI-5gd" id="iwa-gc-5KM"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Enter Full Screen" keyEquivalent="f" id="4J7-dP-txa">
@@ -689,32 +689,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Gq-Y6-NJE">
-                                <rect key="frame" x="0.0" y="41" width="320" height="321"/>
-                                <clipView key="contentView" copiesOnScroll="NO" id="LDY-ys-vQU">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="321"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <textView drawsBackground="NO" importsGraphics="NO" richText="NO" verticallyResizable="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" allowsNonContiguousLayout="YES" smartInsertDelete="YES" id="bQe-ny-Bz6">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="321"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="320" height="321"/>
-                                            <size key="maxSize" width="486" height="10000000"/>
-                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                        </textView>
-                                    </subviews>
-                                </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="1p5-wp-pPM">
-                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Qql-Ob-RPZ">
-                                    <rect key="frame" x="-16" y="0.0" width="16" height="0.0"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                            </scrollView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="i2G-5z-AIC">
                                 <rect key="frame" x="101" y="3" width="119" height="32"/>
                                 <constraints>
@@ -785,23 +759,49 @@
                                     <constraint firstItem="0s9-4o-cpE" firstAttribute="top" secondItem="cqu-kx-Dpi" secondAttribute="top" id="dlN-wr-xxd"/>
                                 </constraints>
                             </customView>
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLA-py-e5v">
+                                <rect key="frame" x="0.0" y="43" width="320" height="317"/>
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="o0o-7e-Fy8">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="317"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" smartInsertDelete="YES" id="ycj-kl-IuA">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="317"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="320" height="317"/>
+                                            <size key="maxSize" width="320" height="10000000"/>
+                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="95B-3m-rrY">
+                                    <rect key="frame" x="-100" y="-100" width="240" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="b4s-I3-CRc">
+                                    <rect key="frame" x="304" y="0.0" width="16" height="317"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="i2G-5z-AIC" firstAttribute="top" secondItem="KLA-py-e5v" secondAttribute="bottom" constant="12" id="402-e9-q9f"/>
                             <constraint firstItem="cqu-kx-Dpi" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="10" id="NqP-eS-oic"/>
-                            <constraint firstItem="8Gq-Y6-NJE" firstAttribute="width" secondItem="m2S-Jp-Qdl" secondAttribute="width" id="OW1-Wu-hoP"/>
                             <constraint firstAttribute="bottom" secondItem="i2G-5z-AIC" secondAttribute="bottom" constant="10" id="Rfk-z0-uFG"/>
-                            <constraint firstItem="8Gq-Y6-NJE" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="ZeA-dM-TAF"/>
+                            <constraint firstAttribute="trailing" secondItem="KLA-py-e5v" secondAttribute="trailing" id="X3c-Aa-gog"/>
                             <constraint firstItem="i2G-5z-AIC" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="bDa-2t-MGO"/>
                             <constraint firstItem="RbS-Pd-evM" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="10" id="fEd-YE-HBb"/>
+                            <constraint firstItem="KLA-py-e5v" firstAttribute="top" secondItem="Ut5-D4-igr" secondAttribute="bottom" constant="12" id="hyd-SB-Cbw"/>
                             <constraint firstItem="RbS-Pd-evM" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="10" id="iAP-su-8kN"/>
-                            <constraint firstItem="8Gq-Y6-NJE" firstAttribute="top" secondItem="RbS-Pd-evM" secondAttribute="bottom" constant="10" id="m0g-yc-Geh"/>
-                            <constraint firstItem="i2G-5z-AIC" firstAttribute="top" secondItem="8Gq-Y6-NJE" secondAttribute="bottom" constant="10" id="oPy-aX-jZc"/>
+                            <constraint firstItem="KLA-py-e5v" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="owZ-oe-AFE"/>
                             <constraint firstItem="cqu-kx-Dpi" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="sba-Yg-mxL"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="settingsMenu" destination="u1j-n2-Vfk" id="gif-PI-gaR"/>
-                        <outlet property="textView" destination="bQe-ny-Bz6" id="RX7-tp-55X"/>
+                        <outlet property="textView" destination="ycj-kl-IuA" id="UaP-hD-Z3U"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
