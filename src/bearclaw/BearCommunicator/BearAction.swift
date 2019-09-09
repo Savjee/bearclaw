@@ -8,7 +8,16 @@
 
 import Foundation
 
-enum BearAction: String {
-    case addFile = "add-file"
-    case createNote = "create"
+enum BearAction {
+    case addFile
+    case createNote
+
+    var URLComponent: String {
+        switch self {
+        case .addFile:
+            return "add-file"
+        case .createNote:
+            return "create"
+        }
+    }
 }

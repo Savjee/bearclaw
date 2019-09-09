@@ -12,7 +12,7 @@ import Cocoa
 class BearCommunicator{
     
     static func sendToBear(action: BearAction, arguments: [BearArgument]){
-        var url = "bear://x-callback-url/\(action.rawValue)?"
+        var url = "bear://x-callback-url/\(action.URLComponent)?"
         
         for (index, arg) in arguments.enumerated() {
             var value = arg.value
