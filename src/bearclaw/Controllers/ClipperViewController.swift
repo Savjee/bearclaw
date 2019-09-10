@@ -36,12 +36,15 @@ class ClipperViewController: NSViewController {
     
     @IBAction func clickedOnFullScreenshotButton(_ sender: NSButton) {
         AppDelegate.popoverInstance.close()
-        
-        NewBearNote()
-            .setFile(fileName: generateNameForScreenshot(), fileContents: ScreenshotTool().captureFullscreen())
-            .setAction(BearAction.createNote)
-            .setTitle(generateNameForScreenshot())
-            .sendToBear()
+
+        let noteTitle = generateNameForScreenshot()
+        let base64Image = ScreenshotTool().captureFullscreen()
+        guard !base64Image.isEmpty else { return }
+
+        let file = FileParameter(fileContent: base64Image,
+                                 filename: noteTitle)
+        let action = BearAction.createNote(title: noteTitle, text: nil, file: file)
+        BearCommunicator().send(action)
     }
     
     @IBAction func clickedOnSettingsButton(_ sender: NSButton) {
@@ -50,27 +53,23 @@ class ClipperViewController: NSViewController {
     
     @IBAction func clickedOnPartialScreenshotButton(_ sender: NSButton) {
         AppDelegate.popoverInstance.close()
-        
+
+        let noteTitle = generateNameForScreenshot()
         let base64Image = ScreenshotTool().captureUserSelection()
-        
-        if base64Image != ""{
-            NewBearNote()
-                .setFile(fileName: generateNameForScreenshot(), fileContents: base64Image)
-                .setAction(BearAction.createNote)
-                .setTitle(generateNameForScreenshot())
-                .sendToBear()
-        }
-        
+        guard !base64Image.isEmpty else { return }
+
+        let file = FileParameter(fileContent: base64Image,
+                                 filename: noteTitle)
+        let action = BearAction.createNote(title: noteTitle, text: nil, file: file)
+        BearCommunicator().send(action)
     }
     
     @IBAction func clickedOnSaveToBear(_ sender: Any) {
         AppDelegate.popoverInstance.close()
 
-        NewBearNote()
-            .setContents(self.textView.string)
-            .setAction(BearAction.createNote)
-            .sendToBear()
-        
+        let action = BearAction.createNote(title: nil, text: self.textView.string, file: nil)
+        BearCommunicator().send(action)
+
         // Reset the textView
         self.textView.textStorage?.mutableString.setString("")
     }

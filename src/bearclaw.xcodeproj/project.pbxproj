@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2543B0871FC59D4100A9F5E0 /* NewBearNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2543B0861FC59D4100A9F5E0 /* NewBearNote.swift */; };
 		2543B0891FC59D5500A9F5E0 /* BearArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2543B0881FC59D5500A9F5E0 /* BearArgument.swift */; };
 		2543B08B1FC5AB2400A9F5E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2543B08A1FC5AB2400A9F5E0 /* Assets.xcassets */; };
 		2543B08E1FC5DE6600A9F5E0 /* ScreenshotTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2543B08D1FC5DE6600A9F5E0 /* ScreenshotTool.swift */; };
@@ -37,7 +36,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2543B0861FC59D4100A9F5E0 /* NewBearNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBearNote.swift; sourceTree = "<group>"; };
 		2543B0881FC59D5500A9F5E0 /* BearArgument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearArgument.swift; sourceTree = "<group>"; };
 		2543B08A1FC5AB2400A9F5E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2543B08D1FC5DE6600A9F5E0 /* ScreenshotTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotTool.swift; sourceTree = "<group>"; };
@@ -71,7 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				259F06761FC55F0200FD0806 /* BearCommunicator.swift */,
-				2543B0861FC59D4100A9F5E0 /* NewBearNote.swift */,
 				2543B0881FC59D5500A9F5E0 /* BearArgument.swift */,
 				25979ECA1FC6DD4700565515 /* BearAction.swift */,
 			);
@@ -226,7 +223,6 @@
 				2543B08E1FC5DE6600A9F5E0 /* ScreenshotTool.swift in Sources */,
 				2543B0891FC59D5500A9F5E0 /* BearArgument.swift in Sources */,
 				259F06631FC559F800FD0806 /* AppDelegate.swift in Sources */,
-				2543B0871FC59D4100A9F5E0 /* NewBearNote.swift in Sources */,
 				259F06751FC55D1300FD0806 /* EventMonitor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

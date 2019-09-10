@@ -8,9 +8,13 @@
 
 import Foundation
 
+struct FileParameter {
+    let fileContent: String
+    let filename: String
+}
 enum BearAction {
     case addFile
-    case createNote
+    case createNote(title: String?, text: String?, file: FileParameter? )
 
     var URLComponent: String {
         switch self {
@@ -19,5 +23,11 @@ enum BearAction {
         case .createNote:
             return "create"
         }
+    }
+}
+
+extension BearAction {
+    func run() {
+        
     }
 }

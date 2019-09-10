@@ -38,6 +38,16 @@ class BearCommunicator{
         let nsURLObject = URL(string: url)
         NSWorkspace.shared.open(nsURLObject!)
     }
+
+    func send(_ action: BearAction) {
+        let urlString = "bear://x-callback-url/open-note?id=73BA2CA4-97F2-48DA-988E-3BDE5815952A-92700-0000483EF03F90B8"
+        // Send it to Bear
+        if let url = URL(string: urlString) {
+            NSWorkspace.shared.open(url)
+        } else {
+            print("Error")
+        }
+    }
 }
 
 extension CharacterSet {
