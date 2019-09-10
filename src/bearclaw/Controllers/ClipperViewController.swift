@@ -44,7 +44,7 @@ class ClipperViewController: NSViewController {
         let file = FileParameter(fileContent: base64Image,
                                  filename: noteTitle)
         let action = BearAction.createNote(title: noteTitle, text: nil, file: file)
-        BearCommunicator().send(action)
+        BearExecutor().execute(action)
     }
     
     @IBAction func clickedOnSettingsButton(_ sender: NSButton) {
@@ -61,14 +61,14 @@ class ClipperViewController: NSViewController {
         let file = FileParameter(fileContent: base64Image,
                                  filename: noteTitle)
         let action = BearAction.createNote(title: noteTitle, text: nil, file: file)
-        BearCommunicator().send(action)
+        BearExecutor().execute(action)
     }
     
     @IBAction func clickedOnSaveToBear(_ sender: Any) {
         AppDelegate.popoverInstance.close()
 
         let action = BearAction.createNote(title: nil, text: self.textView.string, file: nil)
-        BearCommunicator().send(action)
+        BearExecutor().execute(action)
 
         // Reset the textView
         self.textView.textStorage?.mutableString.setString("")
