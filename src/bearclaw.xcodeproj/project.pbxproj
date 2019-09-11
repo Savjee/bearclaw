@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2543B0871FC59D4100A9F5E0 /* NewBearNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2543B0861FC59D4100A9F5E0 /* NewBearNote.swift */; };
-		2543B0891FC59D5500A9F5E0 /* BearArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2543B0881FC59D5500A9F5E0 /* BearArgument.swift */; };
 		2543B08B1FC5AB2400A9F5E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2543B08A1FC5AB2400A9F5E0 /* Assets.xcassets */; };
 		2543B08E1FC5DE6600A9F5E0 /* ScreenshotTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2543B08D1FC5DE6600A9F5E0 /* ScreenshotTool.swift */; };
 		2543B0901FC5E19000A9F5E0 /* SettingsMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2543B08F1FC5E19000A9F5E0 /* SettingsMenuController.swift */; };
@@ -20,7 +18,7 @@
 		259F066A1FC559F800FD0806 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 259F06681FC559F800FD0806 /* Main.storyboard */; };
 		259F06731FC55BBC00FD0806 /* ClipperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259F06721FC55BBC00FD0806 /* ClipperViewController.swift */; };
 		259F06751FC55D1300FD0806 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259F06741FC55D1300FD0806 /* EventMonitor.swift */; };
-		259F06771FC55F0200FD0806 /* BearCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259F06761FC55F0200FD0806 /* BearCommunicator.swift */; };
+		259F06771FC55F0200FD0806 /* BearExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259F06761FC55F0200FD0806 /* BearExecutor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,8 +35,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2543B0861FC59D4100A9F5E0 /* NewBearNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBearNote.swift; sourceTree = "<group>"; };
-		2543B0881FC59D5500A9F5E0 /* BearArgument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearArgument.swift; sourceTree = "<group>"; };
 		2543B08A1FC5AB2400A9F5E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2543B08D1FC5DE6600A9F5E0 /* ScreenshotTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotTool.swift; sourceTree = "<group>"; };
 		2543B08F1FC5E19000A9F5E0 /* SettingsMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMenuController.swift; sourceTree = "<group>"; };
@@ -52,7 +48,7 @@
 		259F066B1FC559F800FD0806 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		259F06721FC55BBC00FD0806 /* ClipperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipperViewController.swift; sourceTree = "<group>"; };
 		259F06741FC55D1300FD0806 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
-		259F06761FC55F0200FD0806 /* BearCommunicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearCommunicator.swift; sourceTree = "<group>"; };
+		259F06761FC55F0200FD0806 /* BearExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearExecutor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,15 +63,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2543B0851FC59D2400A9F5E0 /* BearCommunicator */ = {
+		2543B0851FC59D2400A9F5E0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				259F06761FC55F0200FD0806 /* BearCommunicator.swift */,
-				2543B0861FC59D4100A9F5E0 /* NewBearNote.swift */,
-				2543B0881FC59D5500A9F5E0 /* BearArgument.swift */,
-				25979ECA1FC6DD4700565515 /* BearAction.swift */,
+				2DB2712E232801A3005D7916 /* BearService */,
 			);
-			path = BearCommunicator;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		2543B08C1FC5DE4C00A9F5E0 /* Utils */ = {
@@ -127,7 +120,7 @@
 				25979EC91FC6CD7800565515 /* bearclaw.entitlements */,
 				259F06621FC559F800FD0806 /* AppDelegate.swift */,
 				2543B08A1FC5AB2400A9F5E0 /* Assets.xcassets */,
-				2543B0851FC59D2400A9F5E0 /* BearCommunicator */,
+				2543B0851FC59D2400A9F5E0 /* Services */,
 				25979EC81FC6B17900565515 /* Controllers */,
 				259F066B1FC559F800FD0806 /* Info.plist */,
 				259F06681FC559F800FD0806 /* Main.storyboard */,
@@ -135,6 +128,15 @@
 				25979ECC1FC6FAB500565515 /* Credits.html */,
 			);
 			path = bearclaw;
+			sourceTree = "<group>";
+		};
+		2DB2712E232801A3005D7916 /* BearService */ = {
+			isa = PBXGroup;
+			children = (
+				259F06761FC55F0200FD0806 /* BearExecutor.swift */,
+				25979ECA1FC6DD4700565515 /* BearAction.swift */,
+			);
+			path = BearService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,11 +224,9 @@
 				259F06731FC55BBC00FD0806 /* ClipperViewController.swift in Sources */,
 				25979ECB1FC6DD4700565515 /* BearAction.swift in Sources */,
 				2543B0901FC5E19000A9F5E0 /* SettingsMenuController.swift in Sources */,
-				259F06771FC55F0200FD0806 /* BearCommunicator.swift in Sources */,
+				259F06771FC55F0200FD0806 /* BearExecutor.swift in Sources */,
 				2543B08E1FC5DE6600A9F5E0 /* ScreenshotTool.swift in Sources */,
-				2543B0891FC59D5500A9F5E0 /* BearArgument.swift in Sources */,
 				259F06631FC559F800FD0806 /* AppDelegate.swift in Sources */,
-				2543B0871FC59D4100A9F5E0 /* NewBearNote.swift in Sources */,
 				259F06751FC55D1300FD0806 /* EventMonitor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
