@@ -10,4 +10,4 @@ Quickly create notes/screenshots from your menubar and send them to [Bear](https
 ## Contributing
 I quickly hacked this app together. I'm not a Swift developer so I can definitely use some help!
 
-Feel free to open issue's and pull requests!
+Feel free to open issue's and pull requests! re
